@@ -1,4 +1,4 @@
-package org.unrn.tp4;
+package org.unrn.tp4.ejer1;
 
 // MandoMedio - tiene Líderes de Proyecto a su cargo
 public class MandoMedio extends EmpleadoConSubordinados {

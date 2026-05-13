@@ -1,5 +1,7 @@
+package ejer1;
+
 import org.junit.jupiter.api.Test;
-import org.unrn.tp4.*;
+import org.unrn.tp4.ejer1.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
