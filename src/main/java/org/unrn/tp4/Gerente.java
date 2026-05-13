@@ -1,4 +1,4 @@
-package org.unrn.tp1;
+package org.unrn.tp4;
 
 // Gerente - tiene MandosMedios a su cargo
 class Gerente extends EmpleadoConSubordinados {
