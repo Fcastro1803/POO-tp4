@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Clase Hoja - Empleado Regular (no tiene subordinados)
-class EmpleadoRegular implements Empleado {
+public class EmpleadoRegular implements Empleado {
     private String nombre;
     private double salario;
 
