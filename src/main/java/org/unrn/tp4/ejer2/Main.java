@@ -29,9 +29,9 @@ public class Main {
         hu2.addItem(s4);
 
         //agregamos las HU's al proyecto
-        p1.addHu(hu1);
-        p1.addHu(hu2);
-        p1.addHu(hu3);
-        System.out.println("Al proyecto, " + p1.getNombre() + " necesita: " + p1.horasParaCompletar() + " horas");
+        p1.addItem(hu1);
+        p1.addItem(hu2);
+        p1.addItem(hu3);
+        System.out.println("Al proyecto, " + p1.getNombre() + " necesita: " + p1.getTotalHoras() + " horas");
     }
 }

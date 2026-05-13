@@ -3,20 +3,21 @@ package org.unrn.tp4.ejer2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Proyecto {
+public class Proyecto implements Item {
     private String nombre;
-    private List<HistoriaUsuario> hus;
+    private List<Item> hus;
 
     public Proyecto(String nombre) {
         this.nombre = nombre;
         this.hus = new ArrayList<>();
     }
 
-    public void addHu(HistoriaUsuario hus) {
-        this.hus.add(hus);
+    public String getNombre() {
+        return nombre;
     }
 
-    public double horasParaCompletar() {
+    @Override
+    public double getTotalHoras() {
         double total = 0;
         for (Item hu : hus) {
             total += hu.getTotalHoras();
@@ -24,7 +25,8 @@ public class Proyecto {
         return total;
     }
 
-    public String getNombre() {
-        return nombre;
+    @Override
+    public void addItem(Item item) {
+        this.hus.add(item);
     }
 }
