@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.unrn.tp4.ejer1.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CalcularSalarioTotalTest {
     @Test
@@ -45,5 +46,30 @@ public class CalcularSalarioTotalTest {
         director2.addEmpleadoACargo(gerente2);
 
         assertEquals(81550.0, director1.getTotalSalario() + director2.getTotalSalario());
+    }
+
+    //Este test prueba que no se puedan agregar empleados a cargo, a un empleado regular.
+    @Test
+    public void AgregarSubordinadoEmpleadoRegularTest() {
+        EmpleadoRegular emp1 = new EmpleadoRegular("Juan Pérez", 3000);
+        EmpleadoRegular emp2 = new EmpleadoRegular("María García", 3200);
+        MandoMedio mando1 = new MandoMedio("Roberto Díaz", 6000);
+
+        UnsupportedOperationException exception = assertThrows(
+                UnsupportedOperationException.class,
+                () -> {
+                    emp1.addEmpleadoACargo(emp2);
+                }
+        );
+
+        UnsupportedOperationException exception2 = assertThrows(
+                UnsupportedOperationException.class,
+                () -> {
+                    emp2.addEmpleadoACargo(mando1);
+                }
+        );
+        assertEquals("Los empleados regulares no pueden tener subordinados", exception.getMessage());
+        assertEquals("Los empleados regulares no pueden tener subordinados", exception2.getMessage());
+
     }
 }
